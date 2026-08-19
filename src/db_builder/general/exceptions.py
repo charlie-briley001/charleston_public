@@ -1,0 +1,1 @@
+"""add exceptions class"""
