@@ -26,9 +26,9 @@ queries:
       current_status         VARCHAR,
       current_stop_sequence  VARCHAR,
       direction_id           VARCHAR,
-      latitude               VARCHAR,
-      longitude              VARCHAR,
-      updated_at             VARCHAR,
+      latitude               BIGINT,
+      longitude              BIGINT,
+      updated_at             TIMESTAMP,
       route                  VARCHAR,
       trip                   VARCHAR
     )
