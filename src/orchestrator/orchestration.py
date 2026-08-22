@@ -20,9 +20,12 @@ Classes
    :private-members:
 """
 
-from src.mbta_connector.data_parsing import Vehicles
-from src.db_builder import GetConnection
 from src.config import CREATE_TABLE, UPDATE_ROW
+from src.config.logging import get_logger
+from src.db_builder import GetConnection
+from src.mbta_connector.data_parsing import Vehicles
+
+logger = get_logger(__name__)
 
 
 # ---------------------------------------------------------------------------
@@ -101,11 +104,11 @@ class MbtaApiPull:
             self._api_run()
             self._update_db()
         except Exception as e:
-            print(f"Unexpected error during ingest: {e}")
+            logger.error(f"Unexpected error during ingest: {e}")
         finally:
             if self._conn is not None:
                 self._conn.close()
-                print("Database connection closed.")
+                logger.info('database connection closed.')
 
     # ------------------------------------------------------------------
     # Private pipeline steps
@@ -127,6 +130,7 @@ class MbtaApiPull:
         )
         self._conn = connector_cls(self._db_configs)
         self._conn.connect()
+        logger.info(f'Database connection established to {self.conn_type}')
 
     def _api_run(self) -> None:
         """Fetch vehicle positions and prepare SQL insert statements.
@@ -151,6 +155,7 @@ class MbtaApiPull:
             UPDATE_ROW.format(**v.__dict__)
             for v in vehicles_store
         ]
+        logger.info(f'{len(self._query_store)} have been identified')
 
     def _update_db(self) -> None:
         """Ensure the target table exists and insert all queued records.
@@ -168,4 +173,5 @@ class MbtaApiPull:
         for row in self._query_store:
             self._conn.execute_query(str(row))
 
-        print(f"Inserted {len(self._query_store)} vehicle records.")
+        logger.info(f"Inserted {len(self._query_store)} vehicle records.")
+        logger.info('Database has been updated successfully!')

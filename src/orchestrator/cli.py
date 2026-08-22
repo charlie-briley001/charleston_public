@@ -20,7 +20,10 @@ Functions
 
 import argparse
 
+from src.config.logging import get_logger
 from src.orchestrator.orchestration import MbtaApiPull
+
+logger = get_logger(__name__)
 
 
 # ---------------------------------------------------------------------------
@@ -93,5 +96,8 @@ def main() -> None:
     :returns: None
     """
     args = parse_args()
+    logger.info(
+        f"""Arguments identified - {",".join([f'{k} - {v}' for k, v in args.__dict__.items()])}"""
+    )
     vehicles = MbtaApiPull(args)
     vehicles.run()
