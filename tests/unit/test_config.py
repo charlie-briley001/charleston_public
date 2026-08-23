@@ -16,5 +16,5 @@ def test_load_queries_exception():
 
 def test_variables():
     assert len(UPDATE_ROW) == 311
-    assert len(CREATE_TABLE) == 344
+    assert len(CREATE_TABLE) == 405
     assert _QUERY_TEMPLATES_PATH.name == 'query_templates.yaml'
