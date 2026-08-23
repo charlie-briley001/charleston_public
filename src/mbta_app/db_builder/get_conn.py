@@ -8,9 +8,9 @@ Consumers should interact with this module exclusively through
 :class:`GetConnection` rather than importing connector classes directly.
 """
 
-from src.db_builder.connectors.duckdb_conn import DuckDBConn
-from src.db_builder.general.base_builder import DatabaseFoundation
-from src.db_builder.general.exceptions import ConnectorError
+from src.mbta_app.db_builder.connectors.duckdb_conn import DuckDBConn
+from src.mbta_app.db_builder.general.base_builder import DatabaseFoundation
+from src.mbta_app.db_builder.general.exceptions import ConnectorError
 
 
 class GetConnection:

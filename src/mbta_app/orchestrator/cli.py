@@ -20,8 +20,8 @@ Functions
 
 import argparse
 
-from src.config.logging import get_logger
-from src.orchestrator.orchestration import MbtaApiPull
+from src.mbta_app.config.logging import get_logger
+from src.mbta_app.orchestrator.orchestration import MbtaApiPull
 
 logger = get_logger(__name__)
 

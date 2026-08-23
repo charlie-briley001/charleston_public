@@ -15,7 +15,7 @@ Example::
     # response is a dict with a top-level 'data' key containing a list of vehicle resource objects.
 """
 
-from src.mbta_connector.utils import APISettings, validate, fetch_json, APICallSettings
+from src.mbta_app.mbta_connector.utils import APISettings, validate, fetch_json, APICallSettings
 
 
 class MbtaApi:

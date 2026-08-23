@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from src.db_builder import GetConnection
+from src.mbta_app.db_builder import GetConnection
 
 # Paths
 TEST_DIR = Path(__file__).parent

@@ -22,6 +22,6 @@ Exported names
     UPDATE_ROW
 """
 
-from src.config.config import CREATE_TABLE, UPDATE_ROW
+from src.mbta_app.config.config import CREATE_TABLE, UPDATE_ROW
 
 __all__ = ["CREATE_TABLE", "UPDATE_ROW"]

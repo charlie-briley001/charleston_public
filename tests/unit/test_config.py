@@ -1,6 +1,6 @@
 import pytest
 
-from src.config.config import UPDATE_ROW, CREATE_TABLE, _load_queries, _QUERY_TEMPLATES_PATH
+from src.mbta_app.config.config import UPDATE_ROW, CREATE_TABLE, _load_queries, _QUERY_TEMPLATES_PATH
 from tests.conftest import TEST_YAML, TEST_YAML_FAIL
 
 

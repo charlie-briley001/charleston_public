@@ -20,10 +20,10 @@ Classes
    :private-members:
 """
 
-from src.config import CREATE_TABLE, UPDATE_ROW
-from src.config.logging import get_logger
-from src.db_builder import GetConnection
-from src.mbta_connector.data_parsing import Vehicles
+from src.mbta_app.config import CREATE_TABLE, UPDATE_ROW
+from src.mbta_app.config.logging import get_logger
+from src.mbta_app.db_builder import GetConnection
+from src.mbta_app.mbta_connector.data_parsing import Vehicles
 
 logger = get_logger(__name__)
 

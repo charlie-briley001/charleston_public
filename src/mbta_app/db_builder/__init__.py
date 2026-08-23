@@ -26,6 +26,6 @@ Example::
     conn.close()
 """
 
-from src.db_builder.get_conn import GetConnection
+from src.mbta_app.db_builder.get_conn import GetConnection
 
 __all__ = ["GetConnection"]

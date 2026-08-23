@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from src.db_builder.general.exceptions import ValidationError, DBConnectionError
+from src.mbta_app.db_builder.general.exceptions import ValidationError, DBConnectionError
 
 
 def test_validate_args_fail1(in_memory_db_init):

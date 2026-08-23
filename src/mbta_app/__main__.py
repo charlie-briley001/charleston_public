@@ -14,8 +14,8 @@ All argument parsing is delegated to :func:`src.orchestrator.cli.main`.
 import logging
 from datetime import datetime
 
-from src.config.logging import setup_logging, get_logger
-from src.orchestrator.cli import main
+from src.mbta_app.config.logging import setup_logging, get_logger
+from src.mbta_app.orchestrator.cli import main
 
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

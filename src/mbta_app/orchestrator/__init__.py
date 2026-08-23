@@ -22,6 +22,6 @@ Exported names
     MbtaApiPull
 """
 
-from src.orchestrator.orchestration import MbtaApiPull
+from src.mbta_app.orchestrator.orchestration import MbtaApiPull
 
 __all__ = ["MbtaApiPull"]
