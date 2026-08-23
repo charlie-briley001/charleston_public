@@ -15,7 +15,7 @@ Example::
     # response is a dict with a top-level 'data' key containing a list of vehicle resource objects.
 """
 
-from utils import APISettings, validate, fetch_json, APICallSettings
+from src.mbta_app.mbta_connector.utils import APISettings, validate, fetch_json, APICallSettings
 
 
 class MbtaApi:
@@ -72,8 +72,8 @@ class MbtaApi:
         _response: dict = fetch_json(
             self.web_address.format(
                 attribute_param=attribute_param
-            ),
-            api_key=self.api_key
+            )
+            ,api_key=self.api_key
         )
         return _response
 

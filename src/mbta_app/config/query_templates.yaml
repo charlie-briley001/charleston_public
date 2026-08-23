@@ -1,0 +1,71 @@
+# query_templates.yaml
+# ---------------------
+# SQL query templates for the vehicles table.
+#
+# All queries are loaded once at import time by src.config.config and
+# exposed as module-level string constants (CREATE_TABLE, UPDATE_ROW).
+#
+# Placeholder syntax: {field_name} — filled via str.format() at the call site.
+#
+# Structure
+# ---------
+#   queries:
+#     <query_name>: |-     # block scalar; newlines preserved, no trailing newline
+#       <SQL statement>
+
+queries:
+
+  # ------------------------------------------------------------------
+  # create_table
+  # Creates the vehicles table if it does not already exist.
+  # Run once on application startup before any inserts.
+  # ------------------------------------------------------------------
+  create_table: |-
+    CREATE TABLE IF NOT EXISTS vehicles (
+      id                     VARCHAR,
+      current_status         VARCHAR,
+      current_stop_sequence  VARCHAR,
+      direction_id           VARCHAR,
+      latitude               BIGINT,
+      longitude              BIGINT,
+      updated_at             TIMESTAMP,
+      route                  VARCHAR,
+      trip                   VARCHAR
+    )
+
+  # ------------------------------------------------------------------
+  # update_row
+  # Inserts a single vehicle record.
+  # Placeholders (filled via str.format at the call site):
+  #   {id}                    - unique vehicle identifier
+  #   {current_status}        - e.g. IN_TRANSIT_TO, STOPPED_AT
+  #   {current_stop_sequence} - ordinal position of the current stop
+  #   {direction_id}          - 0 (outbound) or 1 (inbound)
+  #   {latitude}              - WGS-84 latitude
+  #   {longitude}             - WGS-84 longitude
+  #   {updated_at}            - ISO-8601 timestamp of the last update
+  #   {route}                 - route short name (e.g. Red, 28)
+  #   {trip}                  - GTFS trip ID
+  # ------------------------------------------------------------------
+  update_row: |-
+    INSERT INTO vehicles (
+      id,
+      current_status,
+      current_stop_sequence,
+      direction_id,
+      latitude,
+      longitude,
+      updated_at,
+      route,
+      trip
+    ) VALUES (
+      '{id}',
+      '{current_status}',
+      '{current_stop_sequence}',
+      '{direction_id}',
+      '{latitude}',
+      '{longitude}',
+      '{updated_at}',
+      '{route}',
+      '{trip}'
+    )

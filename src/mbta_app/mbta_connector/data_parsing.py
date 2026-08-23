@@ -30,11 +30,11 @@ Typical usage::
 """
 
 from abc import ABC, abstractmethod
-from typing import Optional, Union
+from typing import Union
 
 from pydantic import BaseModel
 
-from src.mbta_connector.api_main import MbtaApi
+from src.mbta_app.mbta_connector.api_main import MbtaApi
 
 
 class FetchAttribute(BaseModel, ABC):

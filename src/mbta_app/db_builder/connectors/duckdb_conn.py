@@ -8,9 +8,9 @@ DuckDB connector implementing
 
 import duckdb
 
-from src.db_builder.general.base_builder import DatabaseFoundation
-from src.db_builder.general.exceptions import ValidationError, DBConnectionError, ExecutionError
-from src.db_builder.general.utils import find_query_res, check_conn
+from src.mbta_app.db_builder.general.base_builder import DatabaseFoundation
+from src.mbta_app.db_builder.general.exceptions import ValidationError, DBConnectionError, ExecutionError
+from src.mbta_app.db_builder.general.utils import find_query_res, check_conn
 
 
 class DuckDBConn(DatabaseFoundation):

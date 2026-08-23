@@ -12,7 +12,7 @@ result in ``self._qry_res``.
 
 from functools import wraps
 
-from src.db_builder.general.exceptions import ConnectionFirstError, QueryFirstError
+from src.mbta_app.db_builder.general.exceptions import ConnectionFirstError, QueryFirstError
 
 
 def find_query_res(func):
