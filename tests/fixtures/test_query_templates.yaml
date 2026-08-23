@@ -1,0 +1,17 @@
+# test_query_templates.yaml
+# ---------------------
+# SQL query for unit testing.
+#
+queries:
+  create_table: |-
+    CREATE TABLE IF NOT EXISTS vehicles (
+      id                     VARCHAR,
+      current_status         VARCHAR,
+      current_stop_sequence  VARCHAR,
+      direction_id           VARCHAR,
+      latitude               BIGINT,
+      longitude              BIGINT,
+      updated_at             TIMESTAMP,
+      route                  VARCHAR,
+      trip                   VARCHAR
+    )
