@@ -2,7 +2,7 @@
 High-level MBTA V3 REST API client.
 
 This module holds :class:`MbtaApi`, the single entry-point for making
- data requests to the MBTA V3 API.  It delegates all HTTP
+data requests to the MBTA V3 API.  It delegates all HTTP
 handling to :mod:`mbta.api.utils`, and validates
 caller-supplied attribute names before issuing any request.
 
