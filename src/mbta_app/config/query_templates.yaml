@@ -30,7 +30,8 @@ queries:
       longitude              BIGINT,
       updated_at             TIMESTAMP,
       route                  VARCHAR,
-      trip                   VARCHAR
+      trip                   VARCHAR,
+      snapshot_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 
   # ------------------------------------------------------------------
