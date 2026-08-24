@@ -7,11 +7,14 @@ DuckDB connector implementing
 """
 
 import duckdb
+import os
+from dotenv import load_dotenv
 
 from src.mbta_app.db_builder.general.base_builder import DatabaseFoundation
 from src.mbta_app.db_builder.general.exceptions import ValidationError, DBConnectionError, ExecutionError
 from src.mbta_app.db_builder.general.utils import find_query_res, check_conn
 
+load_dotenv()
 
 class DuckDBConn(DatabaseFoundation):
     """
@@ -39,7 +42,7 @@ class DuckDBConn(DatabaseFoundation):
        * - Key
          - Description
        * - ``file_name``
-         - Filesystem path for a persistent DuckDB database file.
+         - Filesystem path for a persistent DuckDB database file. This includes a Motheduck connection.
        * - ``memory``
          - Any truthy value opens an in-memory ``":memory:"`` database.
 
