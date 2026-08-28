@@ -11,7 +11,7 @@ TEST_YAML = FIXTURES_DIR / "test_query_templates.yaml"
 TEST_YAML_FAIL = FIXTURES_DIR / "test_query_templates_fail.yaml"
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def in_memory_db_init():
     connector_cls = GetConnection.create_connection(connection_type='duckdb')
     conn = connector_cls({'memory': True})
