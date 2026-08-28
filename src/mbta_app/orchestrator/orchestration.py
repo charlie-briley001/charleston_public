@@ -147,8 +147,9 @@ class MbtaApiPull:
 
         .. warning::
 
-            SQL statements are built via :meth:`str.format`.  Migrate to
-            parameterized queries to eliminate the SQL injection risk.
+            SQL statements are built via :meth:`str.format`. SQL injection risk,
+            but we'll leave for now as there is no risk data leakage
+
         """
         vehicles_store = Vehicles.api()
         self._query_store = [
