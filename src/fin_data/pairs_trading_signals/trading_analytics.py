@@ -25,6 +25,14 @@ from src.fin_data.utils.stats_utils import StatsUtils
 import pandas as pd
 from typing import Optional, Union
 import statsmodels.api as sm
+from dataclasses import dataclass
+
+@dataclass
+class SpreadCalcResult:
+    mean: pd.Series
+    std_dev: pd.Series
+    z_score: pd.Series
+
 
 class PairsTradingAnalysis:
 
@@ -37,6 +45,10 @@ class PairsTradingAnalysis:
         self._observations: int = 0
         self._hedging_ratios: Union[pd.DataFrame, pd.Series] = pd.DataFrame([])
         self._spread_df: pd.Series = pd.Series([])
+        self._spread_metrics: SpreadCalcResult = SpreadCalcResult(
+            mean= pd.Series([]),
+            std_dev= pd.Series([]),
+            z_score= pd.Series([]))
 
         self._hedging_methods = {
             "simple": self._simple_ratio,
@@ -124,3 +136,18 @@ class PairsTradingAnalysis:
                 self._prices[self._series_1][self._lookback:]
                 - self._hedging_ratios * self._prices[self._series_2][self._lookback:]
         )
+
+    def spread_calc(self) -> SpreadCalcResult:
+        self._calc_spread()
+        _mean: pd.Series = self._spread_df.rolling(self._lookback).mean()
+        _std_dev: pd.Series = self._spread_df.rolling(self._lookback).std()
+        self._spread_metrics: SpreadCalcResult = SpreadCalcResult(
+            mean = _mean,
+            std_dev = _std_dev,
+            z_score = (self._spread_df - _mean) / _std_dev
+        )
+        return self._spread_metrics
+
+    def fetch_analytics(self) -> None:
+        self.hedging_ratio()
+        self.spread_calc()
