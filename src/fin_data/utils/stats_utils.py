@@ -14,6 +14,8 @@ import statsmodels.api as sm
 from statsmodels.regression.linear_model import RegressionResultsWrapper
 from statsmodels.tsa.stattools import adfuller, coint
 
+from src.fin_data.exceptions.exceptions_stats_utils import StatsUtilsDataTypeError
+
 
 @dataclass
 class AdfData:
@@ -61,11 +63,11 @@ class StatsUtils:
             count, and observation count.
 
         Raises:
-            ValueError: If ``data_series`` is not a ``pd.Series`` or
+            StatsUtilsDataTypeError: If ``data_series`` is not a ``pd.Series`` or
                 ``np.ndarray``.
         """
         if not isinstance(data_series, (pd.Series, np.ndarray)):
-            raise ValueError(
+            raise StatsUtilsDataTypeError(
                 "data_series must be a pd.Series or np.ndarray, "
                 f"got {type(data_series).__name__}."
             )
@@ -108,21 +110,21 @@ class StatsUtils:
             ``test_p_val``), ``False`` otherwise.
 
         Raises:
-            ValueError: If ``test_p_val`` is not a numeric type or is outside
+            StatsUtilsDataTypeError: If ``test_p_val`` is not a numeric type or is outside
                 ``(0, 1)``.
-            ValueError: If both ``adf_result`` and ``data_series`` are
+            StatsUtilsDataTypeError: If both ``adf_result`` and ``data_series`` are
                 ``None``.
-            ValueError: If ``adf_result`` is not an ``AdfData``, dict, or
+            StatsUtilsDataTypeError: If ``adf_result`` is not an ``AdfData``, dict, or
                 ``None``.
         """
         if not isinstance(test_p_val, (float, int)):
-            raise ValueError("test_p_val must be a float.")
+            raise StatsUtilsDataTypeError("test_p_val must be a float.")
         if not (0 < test_p_val < 1):
-            raise ValueError("test_p_val must be between 0 and 1.")
+            raise StatsUtilsDataTypeError("test_p_val must be between 0 and 1.")
 
         if adf_result is None:
             if data_series is None:
-                raise ValueError(
+                raise StatsUtilsDataTypeError(
                     "data_series must be provided when adf_result is None."
                 )
             adf_result = StatsUtils.adf_test(data_series)
@@ -130,7 +132,7 @@ class StatsUtils:
             adf_result = AdfData(**adf_result)
 
         if not isinstance(adf_result, AdfData):
-            raise ValueError(
+            raise StatsUtilsDataTypeError(
                 "adf_result must be an AdfData instance, a dict, or None."
             )
 
