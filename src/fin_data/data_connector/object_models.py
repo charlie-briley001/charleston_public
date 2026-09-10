@@ -32,7 +32,7 @@ class TimeData:
     def __post_init__(self):
         if not self.end_date or not self.start_date or not self.interval:
             raise TimeParametersError("Start & End Date, and Interval must all be passed")
-        if (not isinstance(self.end_date, str)
+        if (not isinstance(self.start_date, str)
                 or not isinstance(self.end_date, str)
                 or not isinstance(self.interval, str)):
             raise TimeParametersError("Start & End Date, and Interval must all be strings")
