@@ -118,6 +118,3 @@ def main() -> None:
 
     print(f"Portfolio Value - {back_test_results.ending_portfolio_val}")
 
-
-if __name__ == "__main__":
-    main()
