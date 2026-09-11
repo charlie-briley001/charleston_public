@@ -14,12 +14,12 @@ import argparse
 import pandas as pd
 import yaml
 
-from src.fin_data.data_connector.api_main import FinDataApi
-from src.fin_data.data_connector.object_models import TimeData
-from src.fin_data.pairs_trading_signals.backtesting import BacktestSignal
-from src.fin_data.pairs_trading_signals.signals import PairsTradingSignals
-from src.fin_data.pairs_trading_signals.trading_analytics import PairsTradingAnalysis
-from src.fin_data.utils.stats_utils import StatsUtils
+from src.pairs_trading.data_connector.api_main import FinDataApi
+from src.pairs_trading.data_connector.object_models import TimeData
+from src.pairs_trading.pairs_trading_signals.backtesting import BacktestSignal
+from src.pairs_trading.pairs_trading_signals.signals import PairsTradingSignals
+from src.pairs_trading.pairs_trading_signals.trading_analytics import PairsTradingAnalysis
+from src.pairs_trading.utils.stats_utils import StatsUtils
 
 
 def parse_args() -> argparse.Namespace:

@@ -14,7 +14,7 @@ import statsmodels.api as sm
 from statsmodels.regression.linear_model import RegressionResultsWrapper
 from statsmodels.tsa.stattools import adfuller, coint
 
-from src.fin_data.exceptions.exceptions_stats_utils import StatsUtilsDataTypeError
+from src.pairs_trading.exceptions.exceptions_stats_utils import StatsUtilsDataTypeError
 
 
 @dataclass

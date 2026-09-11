@@ -11,8 +11,8 @@ from typing import Optional, Union
 import yfinance as yf
 from pydantic import BaseModel
 
-from src.fin_data.exceptions.exceptions_data_connector import AssetClassError, TimeParametersError
-from src.fin_data.utils.utils import ticker_data_errors
+from src.pairs_trading.exceptions.exceptions_data_connector import AssetClassError, TimeParametersError
+from src.pairs_trading.utils.utils import ticker_data_errors
 
 
 @dataclass

@@ -5,7 +5,7 @@ from typing import Union
 
 import pandas as pd
 
-from src.fin_data.pairs_trading_signals.trading_analytics import SpreadCalcResult
+from src.pairs_trading.pairs_trading_signals.trading_analytics import SpreadCalcResult
 
 
 @dataclass

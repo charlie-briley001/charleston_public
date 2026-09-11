@@ -12,7 +12,7 @@ from typing import Optional, Union
 import pandas as pd
 import statsmodels.api as sm
 
-from src.fin_data.exceptions.exceptions_trading_analytics import (
+from src.pairs_trading.exceptions.exceptions_trading_analytics import (
     LookbackError,
     ParamValidationError,
     SeriesValidationError,

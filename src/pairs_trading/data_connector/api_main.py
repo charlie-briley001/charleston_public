@@ -8,8 +8,8 @@ price data for a ticker pair via the yfinance library.
 import pandas as pd
 import yfinance as yf
 
-from src.fin_data.data_connector.object_models import PairsFoundation, TimeData
-from src.fin_data.utils.utils import ticker_data_errors
+from src.pairs_trading.data_connector.object_models import PairsFoundation, TimeData
+from src.pairs_trading.utils.utils import ticker_data_errors
 
 
 class FinDataApi(PairsFoundation):

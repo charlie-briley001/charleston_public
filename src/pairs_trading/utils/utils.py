@@ -4,7 +4,7 @@ Shared utility decorators for the fin_data connector package.
 
 import functools
 
-from src.fin_data.exceptions.exceptions_data_connector import TickerCreationDataError
+from src.pairs_trading.exceptions.exceptions_data_connector import TickerCreationDataError
 
 
 def ticker_data_errors(func):
