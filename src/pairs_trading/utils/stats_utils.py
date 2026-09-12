@@ -140,8 +140,8 @@ class StatsUtils:
 
     @staticmethod
     def compute_coint_spread(
-        series_1: Union[pd.Series, npt.NDArray],
-        series_2: Union[pd.Series, npt.NDArray],
+        series_1: Union[pd.Series],
+        series_2: Union[pd.Series],
     ) -> pd.Series:
         """Compute the OLS residual spread between two series.
 
@@ -151,9 +151,9 @@ class StatsUtils:
         ``series_1`` as the dependent variable.
 
         Args:
-            series_1 (Union[pd.Series, npt.NDArray]): Dependent time series
+            series_1 (Union[pd.Series]): Dependent time series
                 (y in the OLS regression).
-            series_2 (Union[pd.Series, npt.NDArray]): Independent time series
+            series_2 (Union[pd.Series]): Independent time series
                 (X in the OLS regression).
 
         Returns:
@@ -167,8 +167,8 @@ class StatsUtils:
 
     @staticmethod
     def cointegration_test(
-        series_1: Union[pd.Series, npt.NDArray],
-        series_2: Union[pd.Series, npt.NDArray],
+        series_1: Union[pd.Series],
+        series_2: Union[pd.Series],
         p_value: Union[int, float] = 0.05,
     ) -> bool:
         """Test whether two time series are cointegrated.
@@ -178,8 +178,8 @@ class StatsUtils:
         and NaN rows are dropped before the test is applied.
 
         Args:
-            series_1 (Union[pd.Series, npt.NDArray]): First time series.
-            series_2 (Union[pd.Series, npt.NDArray]): Second time series.
+            series_1 (Union[pd.Series]): First time series.
+            series_2 (Union[pd.Series]): Second time series.
             p_value (Union[int, float]): Significance level for the
                 cointegration test. Defaults to ``0.05``.
 
