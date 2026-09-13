@@ -1,7 +1,7 @@
 import pytest
 
 from src.mbta_app.config.config import UPDATE_ROW, CREATE_TABLE, _load_queries, _QUERY_TEMPLATES_PATH
-from tests.conftest import TEST_YAML, TEST_YAML_FAIL
+from tests.test_mbta_app.conftest import TEST_YAML, TEST_YAML_FAIL
 
 
 def test_load_queries_pass():
