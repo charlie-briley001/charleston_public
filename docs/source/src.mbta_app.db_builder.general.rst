@@ -1,11 +1,11 @@
 src.mbta\_app.db\_builder.general package
-==========================================
+=========================================
 
 Submodules
 ----------
 
 src.mbta\_app.db\_builder.general.base\_builder module
--------------------------------------------------------
+------------------------------------------------------
 
 .. automodule:: src.mbta_app.db_builder.general.base_builder
    :members:
@@ -13,7 +13,7 @@ src.mbta\_app.db\_builder.general.base\_builder module
    :undoc-members:
 
 src.mbta\_app.db\_builder.general.exceptions module
-----------------------------------------------------
+---------------------------------------------------
 
 .. automodule:: src.mbta_app.db_builder.general.exceptions
    :members:
@@ -21,7 +21,7 @@ src.mbta\_app.db\_builder.general.exceptions module
    :undoc-members:
 
 src.mbta\_app.db\_builder.general.utils module
------------------------------------------------
+----------------------------------------------
 
 .. automodule:: src.mbta_app.db_builder.general.utils
    :members:

@@ -1,11 +1,11 @@
 src.mbta\_app.orchestrator package
-===================================
+==================================
 
 Submodules
 ----------
 
 src.mbta\_app.orchestrator.cli module
---------------------------------------
+-------------------------------------
 
 .. automodule:: src.mbta_app.orchestrator.cli
    :members:
@@ -13,7 +13,7 @@ src.mbta\_app.orchestrator.cli module
    :undoc-members:
 
 src.mbta\_app.orchestrator.orchestration module
-------------------------------------------------
+-----------------------------------------------
 
 .. automodule:: src.mbta_app.orchestrator.orchestration
    :members:
