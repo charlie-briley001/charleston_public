@@ -73,7 +73,7 @@ def parse_args() -> argparse.Namespace:
     )
     db_group.add_argument(
         "--db-memory",
-        # action="store_true",
+        action="store_true",
         dest="db_memory",
         default=None,
         help="Run DuckDB entirely in memory (no file persisted).",

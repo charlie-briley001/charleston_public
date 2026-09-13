@@ -102,7 +102,7 @@ def fetch(url: str, api_key: str) -> httpx.Response:
     """
     response: httpx.Response = httpx.get(
         url,
-        #headers={"x-api-key": "api_key"}
+        headers={"x-api-key": "api_key"}
     )
     if response.status_code == 200:
         return response

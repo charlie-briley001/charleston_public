@@ -92,7 +92,9 @@ Logs are written to `src/mbta_app/logs/mbta_api_<timestamp>.log`.
 
 #### Docs
 
-Sphinx documentation is generated in `docs/`. To rebuild:
+Sphinx documentation is generated in `docs/`. Docstrings written with Claude assistance.
+
+To rebuild:
 
 ```bash
 cd docs
@@ -113,23 +115,6 @@ Algorithm practice problems implemented as Jupyter notebooks.
 | **Strings** | Excel Sheet Column Finder, Isomorphic Strings, Valid Palindrome |
 | **Arrays** | Remove Duplicates from Sorted Array, Three Closest |
 
----
-
-## Roadmap
-
-The next major milestone is a full **MBTA Delay Predictor** — see [`mbta-delay-predictor-30day-plan.md`](mbta-delay-predictor-30day-plan.md) for the detailed build plan.
-
-**Phases:**
-1. ✅ API client + DuckDB ingestion foundation
-2. Automated 2-minute polling, structured logging, deployment to a VPS
-3. Delay prediction model (feature engineering → LightGBM → `predict_delay(route, stop, time)`)
-4. MCP server exposing `get_live_predictions` and `predict_delay` tools for LLM access
-
----
-
-## Notes
-
-Documentation created by Claude
 
 ## License
 
