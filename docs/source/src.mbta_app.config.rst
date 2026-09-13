@@ -5,7 +5,7 @@ Submodules
 ----------
 
 src.mbta\_app.config.config module
------------------------------------
+----------------------------------
 
 .. automodule:: src.mbta_app.config.config
    :members:
@@ -13,7 +13,7 @@ src.mbta\_app.config.config module
    :undoc-members:
 
 src.mbta\_app.config.logging module
-------------------------------------
+-----------------------------------
 
 .. automodule:: src.mbta_app.config.logging
    :members:

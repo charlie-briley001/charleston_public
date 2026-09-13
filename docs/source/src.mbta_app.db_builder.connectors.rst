@@ -1,11 +1,11 @@
 src.mbta\_app.db\_builder.connectors package
-=============================================
+============================================
 
 Submodules
 ----------
 
 src.mbta\_app.db\_builder.connectors.duckdb\_conn module
----------------------------------------------------------
+--------------------------------------------------------
 
 .. automodule:: src.mbta_app.db_builder.connectors.duckdb_conn
    :members:

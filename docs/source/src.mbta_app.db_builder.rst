@@ -1,5 +1,5 @@
 src.mbta\_app.db\_builder package
-==================================
+=================================
 
 Subpackages
 -----------
@@ -14,7 +14,7 @@ Submodules
 ----------
 
 src.mbta\_app.db\_builder.get\_conn module
--------------------------------------------
+------------------------------------------
 
 .. automodule:: src.mbta_app.db_builder.get_conn
    :members:
